@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Suma";
+}
+
+<h2>Suma</h2>
+
+<form action="/Calculadora/Suma" method="post">
+    <label>Num1:</label>
+    <input type="text" id="num1" name="num1" />
+    <br />
+    <label>Num2:</label>
+    <input type="text" id="num2" name="num2" />
+    <br />
+    <input id="sumaAction" type="submit" value="Suma" />
+</form>
+
+<div>@ViewBag.SumaRes</div>

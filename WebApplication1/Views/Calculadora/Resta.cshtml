@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Resta";
+}
+
+<h2>Resta</h2>
+
+<form action="/Calculadora/Resta" method="post">
+    <label>Num1:</label>
+    <input type="text" id="num1" name="num1" />
+    <br />
+    <label>Num2:</label>
+    <input type="text" id="num2" name="num2" />
+    <br />
+    <input id="restaAction" type="submit" value="Resta" />
+</form>
+
+<div>@ViewBag.RestaRes</div>
