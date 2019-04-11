@@ -2,17 +2,20 @@
 @{
     ViewBag.Title = "Resta";
 }
+@*Declaro el model para poder usarlo*@
+@model WebApplication1.Models.CalculadoraModel
 
 <h2>Resta</h2>
 
 <form action="/Calculadora/Resta" method="post">
     <label>Num1:</label>
-    <input type="text" id="num1" name="num1" />
+    @*los name son importantes, tienen que ser iguales que los declarados en la clase; se puede agregar val*@
+    <input type="text" name="Num1" value="@Model.Num1"/>
     <br />
     <label>Num2:</label>
-    <input type="text" id="num2" name="num2" />
+    <input type="text" name="Num2"  value="@Model.Num2"/>
     <br />
     <input id="restaAction" type="submit" value="Resta" />
 </form>
 
-<div>@ViewBag.RestaRes</div>
+<div>@Model.Result</div>
