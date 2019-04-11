@@ -45,7 +45,7 @@ namespace WebApplication1.Controllers
             int R = model.Num1 + model.Num2;
             model.Result = R;
             //la vista es TIPADA
-            return View(model);
+            return View(model); 
         }
     }
 }
