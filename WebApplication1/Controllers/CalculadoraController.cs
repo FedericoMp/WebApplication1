@@ -9,6 +9,9 @@ using ClassLibrary1;
 //Siempre chequear los namespaces, se enlazan con using 
 using WebApplication1.Models;
 
+using WebApplication1.MyClasses;
+using WebApplication1.MyServices;
+
 namespace WebApplication1.Controllers
 {
     public class CalculadoraController : Controller
@@ -16,7 +19,10 @@ namespace WebApplication1.Controllers
         // GET: Calculadora
         public ActionResult Index()
         {
-            return View();
+            string name = "Fede";
+            Client ClienteParaVista = ClienteService.MostrarCliente(name);
+            List<Client> ClientesListaVista = ClienteService.MostrarListaClientes();
+            return View(ClientesListaVista);
         }
 
         //Sobrecargar el metodo para mostrar primero la pagina sin datos y luego con el post a la mismapag

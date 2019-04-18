@@ -1,0 +1,18 @@
+﻿@using WebApplication1.MyClasses
+
+@model WebApplication1.MyClasses.Client
+
+@{
+    ViewBag.Title = "Editar Datos";
+}
+
+<h2>Editar Datos</h2>
+
+<form action="/Cliente/EditarDatos" method="post">
+
+    <input type="hidden" name="Dni" value="@Model.Dni" placeholder="Dni" />
+    <label>Name:</label>
+    <input type="text" name="Name" value="@Model.Name" placeholder="Name" />
+    <br />
+    <input id="restaAction" type="submit" value="Editar" />
+</form>

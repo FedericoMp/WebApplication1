@@ -1,7 +1,13 @@
-﻿
+﻿@using WebApplication1.MyClasses
+@model List<WebApplication1.MyClasses.Client> 
+
 @{
     ViewBag.Title = "Calculadora";
 }
 
 <h2>Calculadora</h2>
 
+@foreach(Client c in Model) {
+
+<p>@c.Name</p>
+}

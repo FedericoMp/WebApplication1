@@ -1,0 +1,19 @@
+﻿@using WebApplication1.MyClasses
+
+@model WebApplication1.MyClasses.Client
+
+@{
+    ViewBag.Title = "Agregar Datos";
+}
+
+<h2>AgregarDatos</h2>
+
+<form action="/Cliente/AgregarDatos" method="post">
+    <label>Num1:</label>
+    <input type="text" name="Dni" placeholder="Dni" />
+    <br />
+    <label>Num2:</label>
+    <input type="text" name="Name" placeholder="Name" />
+    <br />
+    <input id="restaAction" type="submit" value="Agregar" />
+</form>
