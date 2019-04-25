@@ -7,6 +7,7 @@ using WebApplication1.MyClasses;
 
 namespace WebApplication1.MyServices {
     public class ClienteService {
+        //creacion de obj estaticos
         public static Client MostrarCliente(string name) {
             Client C = new Client {
                 Name = name

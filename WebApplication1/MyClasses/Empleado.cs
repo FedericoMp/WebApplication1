@@ -5,21 +5,22 @@ using System.Web;
 using WebApplication1.Interfaces;
 
 namespace WebApplication1.MyClasses {
-    public class Client:InterfaceGanancias {
+    public class Empleado:InterfaceGanancias {
+        public string Legajo { get; set; }
         public string Name { get; set; }
-        public string Dni { get; set; }
         //----------------------------------
-        public decimal Gastos { get; set; }
-        public decimal Ventas { get; set; }
+        public decimal Salario { get; set; }
         public decimal Ganancias { get; set; }
         public decimal Impuestos { get; set; }
         public decimal ObtenerGanancias() {
-            return Ventas - Gastos;
+            return Salario * 12;
         }
         public decimal CalcularGanancias() {
-            int porcentaje = 30;
-            decimal ganancia = ObtenerGanancias();
-            return ganancia * porcentaje;
+            decimal ganancias = ObtenerGanancias();
+            if (ganancias < 30000 * 12) {
+                return 0;
+            }
+            return (ganancias - (30000 * 12)) * 3 / 100;
         }
     }
 }

@@ -6,23 +6,42 @@ using System.Web.Mvc;
 
 using WebApplication1.MyClasses;
 using WebApplication1.MyServices;
+using WebApplication1.Interfaces;
 
 namespace WebApplication1.Controllers
 {
     public class ClienteController: Controller {
         // GET: Cliente
         //-------------------------Mostrar todos-------------------------
-        public ActionResult MostrarTodos() {
+        public ActionResult _MostrarTodos() {
             List<Client> listaClientes = ClienteService.ObtenerListaClientes();
+            List<Empleado> listaEmpleados = EmpleadoService.ObtenerListaEmpleados();
+            List<InterfaceGanancias> listaGanancias = new List<InterfaceGanancias>();
+            Afip afip = new Afip();
             // TODO borar porque esta el alta del cliente
-            if (listaClientes.Count == 0) {
+            //if (listaClientes.Count == 0) {
                 Client c = new Client();
                 c.Dni = "12345678";
-                c.Name = "Test";
-                //Agregamos a la lista
+                c.Name = "Cliente";
+                c.Gastos = 50;
+                c.Ventas = 100;
+                c.Ganancias = c.ObtenerGanancias();
                 ClienteService.Agregar(c);
-            }
-            return View(listaClientes);
+
+                Empleado e = new Empleado();
+                e.Legajo = "87654321";
+                e.Name = "Empleado";
+                e.Salario = 100;
+                e.Ganancias = c.ObtenerGanancias();
+                EmpleadoService.Agregar(e);
+
+                listaGanancias.AddRange(listaEmpleados);
+                listaGanancias.AddRange(listaClientes);
+                decimal recaudTotal = afip.CalcRecaudacionTtl(listaGanancias);
+            
+                ViewBag.RecTotal = recaudTotal;
+            //return View(listaClientes);
+            return View(listaGanancias);
         }
 
         //-------------------------Mostrar 1-------------------------

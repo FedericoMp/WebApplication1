@@ -8,21 +8,30 @@
 
 <h2>Clientes:</h2>
 
-<table>
+<table class="table">
     <tr>
-        <td>Dni</td>
-        <td>Name</td>
-        <td>Action</td>
+        <th>Dni</th>
+        <th>Name</th>
+        <th>Gastos</th>
+        <th>Ventas</th>
+        <th>Ganancias</th>
+        <th>Impuestos</th>
+        <th>Action</th>
     </tr>
     @foreach (Client c in Model) {
     <tr>
         <td>@c.Dni</td>
         <td>@c.Name</td>
-        <td>
-            <a href="/Cliente/MostrarUnDato/@c.Dni">Ver</a> | 
-            <a href="/Cliente/BorrarDatos/@c.Dni">Borrar</a> | 
-            <a href="/Cliente/EditarDatos/@c.Dni">Editar</a> 
-        </td>
+        <td>@c.Gastos</td>
+        <td>@c.Ventas</td>
+        <td>@c.Ganancias</td>
+        <td>@c.Impuestos</td>
+        @*TODO - poder realizar operaciones abm
+            <td>
+            <a href="/Cliente/MostrarUnDato/@c.Dni">Ver</a> |
+            <a href="/Cliente/BorrarDatos/@c.Dni">Borrar</a> |
+            <a href="/Cliente/EditarDatos/@c.Dni">Editar</a>
+        </td>*@
     </tr>
     }
 </table>

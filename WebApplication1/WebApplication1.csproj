@@ -126,9 +126,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\InterfaceGanancias.cs" />
     <Compile Include="Models\CalculadoraModel.cs" />
+    <Compile Include="MyClasses\Afip.cs" />
     <Compile Include="MyClasses\Client.cs" />
+    <Compile Include="MyClasses\Empleado.cs" />
     <Compile Include="MyServices\ClienteService.cs" />
+    <Compile Include="MyServices\EmpleadoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +178,7 @@
     <Content Include="Views\Cliente\MostrarUnDato.cshtml" />
     <Content Include="Views\Cliente\AgregarDatos.cshtml" />
     <Content Include="Views\Cliente\EditarDatos.cshtml" />
+    <Content Include="Views\Cliente\_MostrarTodos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
